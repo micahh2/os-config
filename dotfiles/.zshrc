@@ -17,3 +17,5 @@ promptinit
 prompt walters
 
 PATH=~/commands:$PATH
+
+alias tmux="tmux -2"
