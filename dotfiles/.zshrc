@@ -16,6 +16,6 @@ autoload -U promptinit
 promptinit
 prompt walters
 
-PATH=~/commands:$PATH
+PATH=~/bin:$PATH
 
 alias tmux="tmux -2"
