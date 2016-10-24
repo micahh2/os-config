@@ -22,3 +22,12 @@ endif
 
 colorscheme distinguished
 set number
+syntax on
+set tabstop=8
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>

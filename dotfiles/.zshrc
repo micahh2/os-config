@@ -19,3 +19,6 @@ prompt walters
 PATH=~/bin:$PATH
 
 alias tmux="tmux -2"
+alias act=". venv/bin/activate"
+alias dact="deactivate"
+stty -ixon
