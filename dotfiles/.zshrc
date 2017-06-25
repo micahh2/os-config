@@ -12,11 +12,22 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+PATH=~/bin:$PATH
+
+for FOLDER in $HOME/Applications/*(/); do
+    BIN="$FOLDER"
+    if [[ -a $BIN/bin ]]; then
+        BIN+='/bin'
+    fi
+    echo $BIN
+    PATH="$PATH:$BIN"
+    BIN=''
+    FOLDER=''
+done
+
 autoload -U promptinit
 promptinit
 prompt walters
-
-PATH=~/bin:$PATH
 
 alias tmux="tmux -2"
 alias act=". venv/bin/activate"
