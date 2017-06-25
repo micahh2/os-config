@@ -19,10 +19,9 @@ for FOLDER in $HOME/Applications/*(/); do
     if [[ -a $BIN/bin ]]; then
         BIN+='/bin'
     fi
-    echo $BIN
-    PATH="$PATH:$BIN"
-    BIN=''
-    FOLDER=''
+    if test "${PATH#*$BIN}" = "$PATH"; then
+        PATH="$PATH:$BIN"
+    fi
 done
 
 autoload -U promptinit
@@ -33,3 +32,4 @@ alias tmux="tmux -2"
 alias act=". venv/bin/activate"
 alias dact="deactivate"
 stty -ixon
+
