@@ -1,9 +1,6 @@
 # apt
 git vim firefox zsh terminator tmux curl software-properties-common build-essential
 
-# snap
-keepassxc 
-
 # from https://apt.syncthing.net/
 syncthing
 

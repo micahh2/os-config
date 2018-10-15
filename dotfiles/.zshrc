@@ -14,15 +14,17 @@ compinit
 
 PATH=~/bin:$PATH
 
-for FOLDER in $HOME/Applications/*(/); do
-    BIN="$FOLDER"
-    if [[ -a $BIN/bin ]]; then
-        BIN+='/bin'
-    fi
-    if test "${PATH#*$BIN}" = "$PATH"; then
-        PATH="$PATH:$BIN"
-    fi
-done
+if [[ -a $HOME/Apps ]]; then
+    for FOLDER in $HOME/Apps/*(/); do
+        BIN="$FOLDER"
+        if [[ -a $BIN/bin ]]; then
+            BIN+='/bin'
+        fi
+        if test "${PATH#*$BIN}" = "$PATH"; then
+            PATH="$PATH:$BIN"
+        fi
+    done
+fi
 
 autoload -U promptinit
 promptinit
