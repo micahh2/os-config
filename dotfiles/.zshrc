@@ -26,6 +26,9 @@ if [[ -a $HOME/Apps ]]; then
     done
 fi
 
+# Add installed via opt here:
+PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
+
 autoload -U promptinit
 promptinit
 prompt walters
@@ -33,5 +36,12 @@ prompt walters
 alias tmux="tmux -2"
 alias act=". venv/bin/activate"
 alias dact="deactivate"
+
+# Color support
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 stty -ixon
 
