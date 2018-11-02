@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Syncthing
+GenericName=Syncthing
+Comment=
+Exec=syncthing --no-browser
+Terminal=false
+Type=Application
+X-Gnome-Autostart=true

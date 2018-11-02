@@ -1,13 +1,30 @@
 #!/bin/bash
 DIR="/home/micah/os-config"
+
 echo 'Using' $DIR
 
 ln $DIR/dotfiles/.tmux.conf ~/.tmux.conf
 ln $DIR/dotfiles/.zshrc ~/.zshrc
 ln $DIR/dotfiles/.vimrc ~/.vimrc
-sudo ln $DIR/bin/startsyncthing.sh /etc/init.d/startsyncthing.sh
 
-cp -al $DIR/dotfiles/.vim ~/.vim
-cp -al $DIR/bin ~/bin
+if [ ! -d ~/.config/autostart ];
+then
+    if [ ! -d ~/.config ];
+    then
+        mkdir ~/.config
+    fi
+    mkdir ~/.config/autostart
+fi
 
-chsh -s $(which zsh)
+ln $DIR/useful/syncthing.desktop ~/.config/autostart
+
+mkdir ~/.vim
+cp -al $DIR/dotfiles/.vim/* ~/.vim/
+
+mkdir ~/bin
+cp -al $DIR/bin/* ~/bin/
+
+if [ $SHELL != $(which zsh) ];
+then
+    chsh -s $(which zsh)
+fi

@@ -1,5 +1,7 @@
 # apt
-git vim firefox zsh terminator tmux curl software-properties-common build-essential
+git vim firefox zsh terminator tmux curl software-properties-common build-essential mosh ruby-dev
+
+# apt optional
 
 # from https://apt.syncthing.net/
 syncthing
@@ -12,6 +14,10 @@ fluxgui
 
 # from https://github.com/VundleVim/Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# from https://nodejs.org/en/download/package-manager/
+wget -qO- https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
 # from KeePassXC
 keepassxc

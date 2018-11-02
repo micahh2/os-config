@@ -45,3 +45,6 @@ alias egrep='egrep --color=auto'
 
 stty -ixon
 
+bindkey '^R' history-incremental-search-backward
+
+export TERM='xterm-256color'
