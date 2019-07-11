@@ -1,6 +1,11 @@
-#!/bin/zsh                                                                                                   
+#!/bin/zsh
 
 SESSIONNAME="dev"
+if [[ -n $1 ]]
+  then
+      SESSIONNAME=$1
+fi
+
 tmux has-session -t $SESSIONNAME &> /dev/null
 
 if [ $? != 0 ] 

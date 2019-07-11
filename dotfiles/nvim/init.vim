@@ -13,6 +13,10 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
+Plugin 'xuhdev/vim-latex-live-preview'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,3 +47,7 @@ let g:syntastic_check_on_wq = 0
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
+
+" Ctrl x + Ctrl o -> Ctrl <Space>
+imap <C-Space> <C-x><C-o>
+imap <C-@> <C-Space>
