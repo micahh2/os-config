@@ -1,10 +1,14 @@
+# Plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 # apt
 git vim firefox zsh terminator tmux curl software-properties-common build-essential mosh ruby-dev
 git curl software-properties-common build-essential mosh
 
 
 #pacman
-git vim zsh tmux mosh firefox-developer-edition base-devel neovim
+git vim zsh tmux mosh firefox-developer-edition base-devel neovim fzf ripgrep
 
 # apt optional
 

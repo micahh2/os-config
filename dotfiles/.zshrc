@@ -18,7 +18,7 @@ if [[ -a $HOME/Apps ]]; then
     for FOLDER in $HOME/Apps/*(/); do
         BIN="$FOLDER"
         if [[ -a $BIN/bin ]]; then
-            BIN+='/bin'
+            BIN+='bin'
         fi
         if test "${PATH#*$BIN}" = "$PATH"; then
             PATH="$PATH:$BIN"
@@ -27,8 +27,22 @@ if [[ -a $HOME/Apps ]]; then
 fi
 
 # Add installed via opt here:
-PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
+# PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
 PATH=$PATH:$NVM_BIN
+
+# Add installed
+PATH="$PATH:$HOME""bin"
+
+# For ruby gems / bundler
+if [[ -a $HOME/.gem/ruby ]]; then
+    for FOLDER in $HOME.gem/ruby/*(/); do
+        [[ -z $FOLDER ]] && continue
+        BIN="$FOLDER/bin"
+        [[ ":$PATH:" = *":$BIN:"* ]] && continue
+        PATH="$PATH:$BIN"
+    done
+fi
+
 
 autoload -U promptinit
 promptinit
@@ -37,6 +51,8 @@ prompt walters
 alias tmux="tmux -2"
 alias act=". venv/bin/activate"
 alias dact="deactivate"
+alias supertux="export LC_ALL=en_US.UTF-8 && flatpak run org.supertuxproject.SuperTux"
+alias empty="firefox-developer-edition -P empty"
 
 # Neovim
 if [ -e $(which nvim) ];
@@ -60,8 +76,4 @@ bindkey '^R' history-incremental-search-backward
 
 export TERM='xterm-256color'
 export MSSQL_CLI_TELEMETRY_OPTOUT=true
-
-# From nvm install
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
