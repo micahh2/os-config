@@ -1,31 +1,32 @@
-# Plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# General Things
 
-# apt
+## apt
 git vim firefox zsh terminator tmux curl software-properties-common build-essential mosh ruby-dev
-git curl software-properties-common build-essential mosh
+curl software-properties-common build-essential mosh
 
+### from https://www.sublimetext.com/docs/3/linux_repositories.html#apt
+sublime-text
 
-#pacman
-git vim zsh tmux mosh firefox-developer-edition base-devel neovim fzf ripgrep
+### from https://github.com/xflux-gui/fluxgui
+fluxgui
 
-# apt optional
+## pacman
+git vim zsh tmux base-devel neovim fzf ripgrep syncthing borg htop openssh
+### gui
+keepassxc firefox-developer-edition
 
-# from https://apt.syncthing.net/
-sudo apt-get syncthing
 
 # Firefox
 
-# FOR UBUNTU
-# from https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/firefox-aurora
+## FOR UBUNTU
+### from https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/firefox-aurora
 sudo add-apt-repository ppa:ubuntu-mozilla-daily/firefox-aurora
 
-# FOR ARCH
+## FOR ARCH
 firefox-developer-edition
 
-# FOR Others 
-# from https://www.mozilla.org/en-US/firefox/developer/
+## FOR Others 
+### from https://www.mozilla.org/en-US/firefox/developer/
 wget -O firefox-dev.tar.bz2 "https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US"
 mkdir ~/Apps
 tar -xvjf ~/firefox-dev.tar.bz2
@@ -36,26 +37,7 @@ ln -s ~/Apps/firefox/firefox ~/bin/gnome-www-browser
 ln -s ~/Apps/firefox/firefox ~/bin/firefox
 
 
-# from https://www.sublimetext.com/docs/3/linux_repositories.html#apt
-sublime-text
+# Plug
 
-# from https://github.com/xflux-gui/fluxgui
-fluxgui
-
-# from https://github.com/VundleVim/Vundle.vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-# from apt
-sudo apt-get install flatpak flatpak-builder
-
-# from https://github.com/creationix/nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-nvm install --lts
-
-# from KeePassXC
-keepassxc
-
-# from yarnpkg.com
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

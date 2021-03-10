@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=5000
+SAVEHIST=5000
 setopt appendhistory autocd extendedglob notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
@@ -77,3 +77,5 @@ bindkey '^R' history-incremental-search-backward
 export TERM='xterm-256color'
 export MSSQL_CLI_TELEMETRY_OPTOUT=true
 
+# General config
+export XDG_CONFIG_HOME="$HOME/.config"
